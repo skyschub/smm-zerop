@@ -4,7 +4,7 @@ This repo contains both the frontend and the backend for the Team 0% dashboard a
 
 ## Contributing
 
-If you want to report any issues, suggestions, or concerns, please reach out to `@denschub` on Discord. Likewise, if you want to contribute code, please ping `@denschub` before doing any work to make sure that no effort ends up wasted. :)
+If you want to report any issues, suggestions, or concerns, please reach out to `@skyschub` on Discord. Likewise, if you want to contribute code, please ping `@skyschub` before doing any work to make sure that no effort ends up wasted. :)
 
 This project is, essentially, a fancy Rust application using `axum` and `sqlx`. To work on it, install the latest Rust toolchain. You need to set a bunch of config fields, and you probably want to do that via environmental variables. The provided `.env.example` should give you a good idea, `cargo run -- --help` will show you what's available.
 
