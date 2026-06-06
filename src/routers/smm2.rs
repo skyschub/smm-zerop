@@ -58,7 +58,7 @@ async fn random_level(
     //   not, so we have to unset the parameter so internal processing works.
     let mut effective_filters = filter_params.clone();
     effective_filters.year = match effective_filters.year {
-        None => Some(2023),
+        None => Some(2024),
         Some(-1) => None,
         Some(year) => Some(year),
     };
