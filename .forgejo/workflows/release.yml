@@ -10,13 +10,13 @@ jobs:
   docker-release:
     runs-on: ubuntu-latest
     steps:
-      - uses: https://code.schub.bar/actions/checkout@v4
-      - uses: https://code.schub.bar/actions/docker-login-action@v3
+      - uses: https://code.schub.bar/actions/checkout@v7
+      - uses: https://code.schub.bar/actions/docker-login-action@v4
         with:
           registry: code.schub.bar
           username: ${{ github.repository_owner }}
           password: ${{ secrets.PACKAGE_TOKEN }}
-      - uses: https://code.schub.bar/actions/docker-metadata-action@v5
+      - uses: https://code.schub.bar/actions/docker-metadata-action@v6
         id: docker-meta
         with:
           images: |
@@ -25,7 +25,7 @@ jobs:
             type=semver,pattern={{major}}.{{minor}}.{{patch}}
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
-      - uses: https://code.schub.bar/actions/docker-build-push-action@v6
+      - uses: https://code.schub.bar/actions/docker-build-push-action@v7
         id: docker_build
         with:
           context: .
@@ -40,7 +40,7 @@ jobs:
           docker cp $container:/app .
           echo "version=$(./app/web --version | awk -F ' ' '{print $2}')" >> $GITHUB_OUTPUT
           cd app/ && tar -cvf ../smm-zerop.tar .
-      - uses: https://code.schub.bar/actions/forgejo-upload-artifact@v4
+      - uses: https://code.schub.bar/actions/forgejo-upload-artifact@v5
         with:
           name: smm-zerop-${{ steps.artifact_packaging.outputs.version }}-linux-amd64.tar.zip
           path: ./out/smm-zerop.tar

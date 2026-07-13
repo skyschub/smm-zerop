@@ -8,8 +8,8 @@
     "start": "vite"
   },
   "devDependencies": {
-    "prettier": "3.7.4",
-    "vite": "7.2.7"
+    "prettier": "3.9.5",
+    "vite": "8.1.4"
   },
   "dependencies": {
     "@fontsource-variable/inter": "5.2.8"
